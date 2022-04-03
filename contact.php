@@ -16,7 +16,7 @@
         $stmt = $conn->prepare("insert into contact(name, date, development, calls, specificCalls, observed, behavior) values(?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssssss",$name, $date, $development, $calls, $specificCalls, $observed, $behavior);
         $stmt->execute();
-        echo "Form Submitted...";
+        header('Location: http://localhost/formcuttack/contact.html');
         $stmt->close();
         $conn->close();
     }
